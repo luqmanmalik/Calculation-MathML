@@ -1,2 +1,2 @@
-# Calculation-MathML
+# Calculations-MathML
 Calculating in MathML
