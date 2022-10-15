@@ -34,17 +34,17 @@ body{margin:0 0 0 0;font-family: 'lmroman10-regular'}
     
 }
 .T_page{
-	background-image:url("snowmnt.jpeg");
+	background-image:url("Sadako.jpg");
 	width:50%; 
 	height:100%; 
 	vertical-align:top;
 	padding:10 10 0 10;
-	background-position: center;
+	background-position: absolute;
 	background-repeat:no-repeat;
 }
 .T_field{
 	margin-left: 20;
-	padding:50 0 30 35;
+	padding:60 0 30 35;
 	background:linear-gradient(white,silver);
 	opacity:.7;
 

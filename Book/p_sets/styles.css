@@ -70,8 +70,8 @@ math{font-family:"Latin Modern Roman"}
 	font-family:'source-code-pro','Light';
 }
 .sols_by{
-    width:max-width;
-    margin:-20 0 0 0;
+    text-shadow:2px 2px 2px lightgray;
+    margin:-33 0 0 0;
 	font-size:17;
 	color:#4448;
 	font-weight:500;
