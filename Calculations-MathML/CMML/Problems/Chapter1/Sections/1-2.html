@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang='en' engine='Webkit'>
+  <head name='Calculations in MathML'>
+    <title>Calculations in MathML | Algebra</title>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='styles.css'>
+  </head>
+  <body class="body">
+  <label atyp='global' class="unselectable">
+    <h1>1&nbsp;<i>Numbers</i></h1>
+    <h5>&sect;1. THE INTEGERS</h5>
+    <table class="definition">
+	  <tr><th colspan="2">Definitions</th>
+	  </tr><tr name="Positive_Integers">
+	    <td class="TDCE_def">D-I.</td>
+	    <td class="TDCE_definition"><!--Definition I-->
+	      <definition/set>The positive integers.</definition>
+		  <math/name='Positive_integers' type='set_definition'>
+		    <mrow/name='positive_integers' type='set_definition'>
+			  <mi><sup/type='i'>&plus;</sup>&integers;&colon;</mi>
+			  <mrow/type='set_defin'><mfenced open='{' close='}'>
+			  <mn>1&#8203;</mn><mn>2&#8203;</mn><mn>3&#8203;</mn>
+			  <mi/name='ellipses' type='i'>&hellip;</mi></mfenced>
+			  <mi/seprator='true' syntax='punc'>&period;</mi></mrow>
+			</mrow>
+		  </math>
+		</td>
+	  </tr>
+	  <tr name="Zero">
+		<td class="TDCE_def">D-II.</td>
+		<td class="TDCE_definition">
+		  <math name='defin_zero'>
+		    <mrow name='definition_zero'><!--Definition II-->
+			  <mtext/list>Zero,&nbsp;naught,&nbsp;null,&nbsp;origin,</mtext>
+			  <span class="strikethroughWK">&nbsp;&ThinSpace;0&comma;</span>
+			  <mtext>0,&nbsp;&empty;,&nbsp;&#123;&nbsp;&#125;&period;</mtext>
+			</mrow>
+		  </math>
+		</td>
+	  </tr><!--Definition III-->
+	  <tr name="The_natural_numbers">
+	    <td class="TDCE_def">D-III.</td>
+	    <td class="TDCE_definition">
+	      <math/name='natural_numbers'>
+	        <mrow/name='natural_numbers'>
+			  <mtext/setname>The&nbsp;natural numbers.&MediumSpace;</mtext>
+			  <mi/type='set_indicator' name='Naturals'>&naturals;&colon;</mi>
+			  <!--<set><cn>0</cn><cn>1</cn><cn>2</cn><cn>&hellip;</cn></set>-->
+			  <mfenced open='{' close='}'><mn>0&#8302;</mn><mn>1&#8302;</mn>
+			  <mn>2&#8302;</mn><mi/seperator='false'>&hellip;</mi></mfenced>
+		    </mrow>
+		  </math>
+	    </td>
+	  </tr><!--Definition IV-->
+	  <tr name="the_positive_integers">
+		<td class="TDCE_def">D-IV.</td>
+		<td class="TDCE_definition">
+		  <math/name='negative_integers'>
+			<mrow/name='negative_integers'>
+			  <mtext>The negative integers.&MediumSpace;</mtext>
+			  <mi><sup/indicator>&minus;</sup>&integers;&colon;</mi>
+		 	  <mrow/type='set_defin'><mfenced open='{' close='}'>
+			  <mi/type='enumerat' seperator='false'>&hellip;</mi>
+			  <mn/type='elem'>&minus;&VeryThinSpace;3&#8302;</mn>
+			  <mn/type='elem'>&minus;&VeryThinSpace;2&#8302;</mn>
+			  <mn/type='elem'>&minus;&VeryThinSpace;1&#8302;</mn>
+			  </mfenced><mi/seprator='true'>&period;</mi></mrow>
+			</mrow>
+		  </math>
+		</td>
+	  </tr>
+	</table>
+	<div class="Figure1-1">
+	  <canvas id="cvs" width="315" height="30"></canvas>
+	  <script name="number_line">
+		var canvas = document.getElementById('cvs');
+		var context = canvas.getContext('2d');
+		/* Integer line */
+		context.beginPath();
+		context.moveTo(0.5, 6.5);
+		context.lineTo(312.5, 6.5);
+		context.strokeStyle="#303132";
+		context.stroke();
+		/* Interval marker-loop */
+		for(var a = 20.5; a < 300.5; a +=45){
+		  fnc(a, context);
+		}
+		/* Numerical marker-loop */
+		/* Copied &VeryThinSpace from output */
+		for(var b = 20.5; b < 300.5; b +=45){
+		  if (b < 21){c = '− 3  '}
+			else if (b < 66){c = '− 2  '}
+			  else if (b < 111){c = '− 1  '}
+				else if (b < 156){c = ' 0 '}
+				  else if (b < 201){c = ' 1 '}
+					else if (b < 246){c = ' 2 '}
+					  else if (b < 291){c = ' 3 '}
+		  fnc1(b, context);
+		}
+		/* Interval markers */
+		function fnc(y, context){
+		  context.moveTo(y, 0); 
+		  context.lineTo(y, 13.5);
+		  context.stroke();
+		}
+		/* Numerical markers */
+		function fnc1(y, context){
+		  context.font = '10pt Didot';
+		  context.textAlign = 'center';
+		  context.fillStyle = '#303132';
+		  context.fillText(c, y, 29);
+		}
+	  </script>
+	  <span class="Figure">Fig. 1-1</span>
+	</div><!-- Axiom 1 -->
+    <table class="theorem">
+	  <tr name="Axiom 1.">
+		<td class="TDCE-1">Axiom 1.</td>
+		<td class="TDCE-Ax1">
+		  <math name='Additive_identity'>
+			<mrow><mtext/class='axiom'>Additive identity.</mtext>
+			  <mpadded lspace='5px'><mn/type='term'>0&#8203;</mn>
+			    <mo>&plus;</mo><mi class='variable'>a&#8203;</mi>
+			    <mo>&equals;</mo><mi class='variable'>a&#8203;</mi>
+			    <mo>&plus;</mo><mn>0&#8203;</mn><mo>&equals;</mo>
+				<mi/type='noun' class='variable'>a&period;</mi>
+			  </mpadded>
+			</mrow>
+		  </math>
+		</td>
+	  </tr>
+    </table><!-- Axiom 2-->
+	<table class="theorem">
+	  <tr name="Axiom 2.">
+		<td class="TDCE-1">Axiom 2.</td>
+		<td class="TDCE_Ax2-SFI">
+		  <math name='Additive_inverse'>
+			<mrow/name='Additive_inverse'><!-- glyph_type controll -->
+			  <mtext/type='propname'>Additive inverse.</mtext><mpadded lspace='5px'>
+			  <mi class='variable'>a&#8203;</mi><mo/type='operatr'>&plus;</mo><mrow>
+			  <mo/operatr>&#40;</mo><mi class='variable'>&minus;&VeryThinSpace;a</mi>
+			  <mo>&#41;</mo></mrow><mrow><mo/type='op'>&equals;</mo><mn>0&#8203;</mn>
+			  </mrow><mpadded lspace='10px'><mtext/type='ConjPhrase'>and also</mtext>
+			  <mpadded/lspace='10px'><mi/class='variable'>&minus;&VeryThinSpace;a</mi>
+			  <mo>&plus;</mo><mi/class='variable'>a&#8203;</mi><mo/oprtr>&equals;</mo>
+			  <mn/natural_num>0&#8203;</mn><mtext/type='punctuation'>&period;</mtext>
+			  </mpadded></mpadded></mpadded><!-- stylistic padding -->
+			</mrow>
+		  </math>
+		</td>
+	  </tr>
+	</table><!-- Geometrical-->
+	<p name='Additive Inverse'>
+	  In the geometrical representation of the integers, 
+	  this means that <mi/class='variable'>a</mi> and 
+	  <mi/class='variable'>&minus;&VeryThinSpace;a</mi> 
+	  <clause>take on opposing sides relative to</clause>
+	  <span class="arial">origin</span>, as shown in the figure below.
+	  <section class="Figure1-2" name='Figure_2'>
+	    <canvas id="Figure2" width="250px" height="40px"></canvas>
+		<script name='Figure1-2'>
+		  var canvas = document.getElementById('Figure2');
+		  var context = canvas.getContext('2d');
+		  /* Integer line */
+		  context.beginPath();
+		  context.moveTo(0.5, 7.5);
+		  context.lineTo(245.5, 7.5);
+		  context.strokeStyle='#303132';
+		  context.stroke();
+		  /* Interval marker-loop */
+		  for(var a = 36.5; a < 245.5; a +=85){
+			fnc(a, context);
+		  }
+		  /* Numerical marker-loop */
+		  for(var b = 36.5; b < 245.5; b +=85){
+			if (b < 37){c = 'a'}
+			  else if (b < 122){c = ''}
+				else if (b < 207){c = '− a   '}
+			fnc1(b, context);
+		  }
+		  /* Origin */
+		  context.font = '11pt Didot regular';
+		  context.textAlign = 'right';
+		  context.fillStyle = '#303132';
+		  context.fillText('0', canvas.width/1.98, canvas.height/1.25);
+		  /* Interval markers */
+		  function fnc(y, context){
+			context.moveTo(y, 0); 
+			context.lineTo(y, 15.5);
+			context.stroke();
+		  }
+		  /* Numerical markers */
+		  function fnc1(y, context){
+			context.font = 'italic 11pt Didot';
+			context.textAlign = 'center';
+			context.fillStyle = '#303132';
+			context.fillText(c, y, 32);
+		  }
+		</script>
+	    <span class="Figure">Fig. 1-2</span>
+	  </section>
+	  <clause>It follows, according to this representation,</clause>
+	  <clause>that we may now express the notions</clause>
+	  <math display='block' style='padding:10'>
+	    <mpadded width='5em'>
+		  <mi/class='variable'>b&#8203;</mi><mo/type='operator'>&equals;</mo>
+		  <mi/type='operator'>&minus;</mi><mrow><mo/type='operator'>&#40;</mo>
+		  <mi/type='operator'>&minus;</mi><mi/int class='variable'>b&#8203;</mi>
+		  <mo/type='oper'>&#41;</mo></mpadded><mpadded width='2em' lspace='.1em'>
+		  <mtext/type='cc'>or</mtext></mpadded><mi class='variable'>c&#8203;</mi>
+		  <mo/type='operatr'>&equals;</mo><mi/type='indicator'>&minus;</mi><mrow>
+		  <mo>&#40;</mo><mi class='variable'>&minus;&VeryThinSpace;c&#8203;</mi>
+		  <mo/type='operator' syntax='quantifr'>&#41;</mo><mspace width='1em'/>
+		  <mtext/type='conjunctive_phrase'>&#124;&ThinSpace;where&nbsp;</mtext>
+		  <mi/class='variable'>b&#8302;</mi><mtext/conj>&nbsp;and&nbsp;</mtext>
+		  <mi/class='variable'>c&#8302;</mi><mi/type='quantifr'>&nbsp;&in;</mi>
+		  <mi/set_defn>&nbsp;&integers;</mi><mi/seperator='false'>&period;</mi>
+		  <!-- Firefox / Whisk rendering discrepency on c -->
+		</mpadded>
+	  </math>
+	  <clause>To illustrate these special cases, we might picture:</clause>
+	  <div class='Figure1-3' name='Figure_3'>
+		<canvas id="Figure1-3" width="345px" height="40px"></canvas>
+		<script name='Figure3'>
+		  var canvas = document.getElementById('Figure1-3');
+		  var context = canvas.getContext('2d');
+		  /* Integer line */
+		  context.beginPath();
+		  context.moveTo(0.5, 7.5);
+		  context.lineTo(312.5, 7.5);
+		  context.strokeStyle="#303132";
+		  context.stroke();
+		  /* Interval marker-loop */
+		  for(var a = 20.5; a < 300.5; a +=45){
+			fnc(a, context);
+		  }
+		  /* Numerical marker-loop */
+		  for(var b = 20.5; b < 300.5; b +=45){
+			if (b < 21){c = '− b   '}
+			  else if (b < 66){c = '';}
+				else if (b < 111){c = ''}
+				  else if (b < 156){c = ''}
+					else if (b < 201){c = ''}
+					  else if (b < 246){c = ''}
+						else if (b < 291){c = 'b'}
+			fnc1(b, context);
+		  }
+		  /* Origin */
+		  context.font = '11pt Didot regular';
+		  context.textAlign = 'right';
+		  context.fillStyle = '#303132';
+		  context.fillText('0', canvas.width/2.15, canvas.height/1.25);
+		  /* = –(-  ) */
+		  context.font = '11pt Didot';
+		  context.textAlign = 'right';
+		  context.fillStyle = '#303132';
+		  context.fillText('= – (–   )', canvas.width, canvas.height/1.25);
+		  /* b */
+		  context.font = 'italic 11pt Didot';
+		  context.textAlign = 'right';
+		  context.fillStyle = '#303132';
+		  context.fillText('b', canvas.width/1.012, canvas.height/1.22);
+		  /* Interval markers */
+		  function fnc(y, context){
+			context.moveTo(y, 0); 
+			context.lineTo(y, 15.5);
+			context.stroke();
+		  }
+		  /* Numerical markers */
+		  function fnc1(y, context){
+			context.font = 'italic 11pt Didot';
+			context.textAlign = 'center';
+			context.fillStyle = '#303132';
+			context.fillText(c, y, 32);
+		  }
+		</script>
+		<span class="Figure-2">Fig. 1-3</span>
+	  </div>
+	  <div class='Figure1-4'>
+		<canvas id="Figure1-4" width="527" height="40"></canvas>
+		<script name='Figure1-4'>
+		  var canvas = document.getElementById('Figure1-4');
+		  var context = canvas.getContext('2d');
+		  /* Integer line */
+		  context.beginPath();
+		  context.moveTo(0.5, 7.5);
+		  context.lineTo(490.5, 7.5);
+		  context.strokeStyle="#303132";
+		  context.stroke();
+		  /* Interval marker-loop */
+		  for(var a = 20.5; a < 480.5; a +=45){
+			fnc(a, context);
+		  }
+		  /* Numerical marker-loop */
+		  for(var b = 20.5; b < 480.5; b +=45){
+		  	if (b < 21){c = '− c   '}
+		  	  else if (b < 66){c = '';}
+		      	else if (b < 111){c = ''}
+		      	  else if (b < 156){c = ''}
+		          	else if (b < 201){c = ''}
+		          	  else if (b < 246){c = ''}
+		              	else if (b < 291){c = ''}
+		              	  else if (b < 326){c = ''}
+		                  	else if (b < 371){c = ''}
+		                  	  else if (b < 416){c = ''}
+		                      	else if (b < 461){c = ''}
+								  else if (b < 481){c = 'c'}
+			fnc1(b, context);
+		  }
+		  /* Origin */
+		  context.font = '11pt Didot regular';
+		  context.textAlign = 'right';
+		  context.fillStyle = '#303132';
+		  context.fillText('0', canvas.width/2.1, canvas.height/1.25);
+		  /* = –(-  ) */
+		  context.font = '11pt Didot';
+		  context.textAlign = 'right';
+		  context.fillStyle = '#303132';
+		  context.fillText('= – (–   )', canvas.width, canvas.height/1.25);
+		  /* c */
+		  context.font = 'italic 11pt Didot regular';
+		  context.textAlign = 'right';
+		  context.fillStyle = '#303132';
+		  context.fillText('c', canvas.width/1.01, canvas.height/1.25);
+		  /* Interval markers */
+		  function fnc(y, context){
+			context.moveTo(y, 0); 
+			context.lineTo(y, 15.5);
+			context.stroke();
+		  }
+		  /* Numerical markers */
+		  function fnc1(y, context){
+			context.font = 'italic 11pt Didot';
+			context.textAlign = 'center';
+			context.fillStyle = '#303132';
+			context.fillText(c, y, 32);
+		  }
+	    </script>
+	    <span class="Figure-1">Fig. 1-4</span>
+	  </div><!-- Remark! -->
+	  <table name='Remark1'>
+		<tr name='Remark1'>
+		  <td class='VAT'><b>Remark.</b></td>
+	      <td class='RMRK_body' name='Remark.'>
+			Let us use the termonoligy <b><span class="arial">minus</span> 
+			<mi/type='noun' class='variable'>a&#8302;</mi></b> <prp>for</prp> 
+			<b/boldface>&minus;&VeryThinSpace;<mi class='variable'>a</mi></b> 
+			<claus>rather than "negative <mi class='variable'>a</mi>&comma;"</claus>
+			which suggests that &minus;&VeryThinSpace;<mi/class='variable'>a</mi> is
+			a negative number. This is only true when <mi/class='variable'>a</mi> 
+			<clause>itself is a positive number. Perspicuously, we see that</clause>
+			<math name='double_neg'><mrow/name='double_negative'><mn>2&#8302;</mn>
+			<mo/type='operator'>&equals;</mo><mi>&minus;</mi><mrow><mo>&#40;</mo>
+			<mn>&minus;&VeryThinSpace;2&#8302;</mn><mo/type='operator'>&#41;</mo>
+			</mrow></mrow></math> <clause>is a positive number but 2 is equal to 
+			<mi/class='variable'>&minus;&VeryThinSpace;a</mi>&comma; where</clause> 
+			<mi/class='variable'>a&#8302;</mi>&nbsp;<mo/type='operator'>&equals;</mo>
+			<mn/type='number'>&minus;&VeryThinSpace;2&#8302;</mn>&comma; <clause>and
+			<mi/class='variable'>a</mi> itself is negative&period;</clause> However 
+			labyrinthine its veneer, this fact constitutes arithmatic law.		  
+		  </tb>
+		</tr>
+	  </table>
+	</p><!--SECTION 2 | Rules for Addition-->
+	<h5>&sect;2. RULES FOR ADDITION</h5>
+	<table class="theorem">
+	  <tr name="Axiom 3.">
+	    <td class="TDCE-1">Axiom 3.</td>
+	    <td class="TDCE_Ax3">
+		  <math name='Axiom_3'>
+		    <mrow name='Axiom3'>
+			  <mtext>Commutativity.&MediumSpace;If&nbsp;</mtext>
+			  <mi/type='subject' class='variable'>a&#8302;</mi>
+			  <mtext type='conjunctivePbrase'>&nbsp;and&nbsp;</mtext>
+			  <mi/type='subject' class='variable'>b&#8302;&nbsp;</mi>
+			  <mtext type='predicate'>are integers, then&nbsp;</mtext>
+			  <mi/type='object'class='variable'>a&#8203;</mi> 
+			  <mo>&plus;</mo><mi/class='variable'>b&#8203;</mi>
+			  <mo>&equals;</mo><mi/class='variable'>b&#8203;</mi>
+			  <mo>&plus;</mo><mi/class='variable'>a&period;</mi>
+		    <mrow>
+		  </math>
+	    </td>
+	  </tr>
+    </table>
+	<table class="theorem">
+	  <tr name="Axiom 4.">
+	    <td class="TDCE-1">Axiom 4.</td>
+	    <td class="TDCE_Ax4">
+		  <math name='Axiom_4'>
+		    <mrow name='Axiom4'>
+			  <mtext>Associativity.&nbsp; If&nbsp;</mtext>
+			  <mi/class='variable'>a&comma;&nbsp;&#8302;</mi>
+			  <mi/class='variable'>b&#8302;&comma;&nbsp;</mi>
+			  <mtext type='conjunctivePhrase'>and&nbsp;</mtext>
+			  <mi/class='variable'>c&#8302;</mi><!--predicate-->
+			  <mtext/descP>&nbsp;are integers, then&nbsp;</mtext>
+			  <mrow name='fenced'><mo/type='quantity'>&#40;</mo>
+			  <mi/class='variable'>a&#8302;</mi><mo>&plus;</mo>
+			  <mi/class='variable'>b&#8302;</mi><mo>&#41;</mo>
+			  <mo>&plus;</mo><mi/class='variable'>c&#8302;</mi>
+			  </mrow><mrow name='fenced'><mo/oprt>&equals;</mo>
+			  <mi/class='variable'>a&#8302;</mi><mo>&plus;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>b&#8302;</mi>
+			  <mo>&plus;</mo><mi/class='variable'>c&#8302;</mi>
+			  <mo/type='quant'>&#41;</mo><mtext>&period;</mtext>
+		    </mrow>
+		  </math>
+	    </td>
+	  </tr>
+    </table><br/>
+	<table class="theorem">
+	  <tr name="Theorem 1.">
+	    <td class="TDCE-1">Theorem 1.</td>
+	    <td class="TDCE-2FFX">
+		  <math name='Theorem1'>
+		    <mrow name='Theorems1'>
+			  <mtext>If&nbsp;</mtext><mi/class='variable'>a&#8302;</mi>
+			  <mo/TP='op'>&plus;</mo><mi/class='variable'>b&#8302;</mi>
+			  <mo/type='adjective'>&equals;</mo><mn/T='N'>0&#8302;</mn>
+			  <mtext/type='adverbialPh'>&comma;&nbsp;then&nbsp;</mtext>
+			  <mi/class='variable'>b&#8302;</mi><mo/T='O'>&equals;</mo>
+			  <mi/class='variable'>&minus;&VeryThinSpace;a&#8302;</mi>
+			  <mtext/type='conjunctivePhrase'>&nbsp;and&nbsp;</mtext>
+			  <mi/class='variable'>a&#8302;</mi><mo/T='O'>&equals;</mo>
+			  <mi/class='variable'>&minus;&VeryThinSpace;b&#8302;</mi>
+			  <mi/seperator='false' type='punctuation'>&period;</mi>
+		    </mrow>
+		  </math>
+	    </td>
+	  </tr>
+    </table>
+	<p name="Proof_Theorem1">
+	  <span/class="proof">Proof</span>&period;
+	  <math/name='proof_thrm1'>
+		<mrow/name='proof_thrm1'><!--Gecko does not add space to &#8302;-->
+		  <mtext/type='clause'>To prove this statement, add&nbsp;</mtext>
+		  <mi/class='variable'>&minus;&VeryThinSpace;a</mi><mi>&#8302;</mi>
+		  <mtext/type='clause'>to both sides of the equation&nbsp;</mtext>
+		  <mi/class='variable'>a&#8302;</mi><mo/type='operator'>&plus;</mo>
+		  <mi/class='variable'>b&#8302;</mi><mo/type='operator'>&equals;</mo> 
+		  <mn>0&#8302;</mn><mtext/type='conjuctive'>&period;&nbsp;We get</mtext>
+		</mrow>
+	  </math>
+	  <statement class='Proof_Theorem1;'>
+		<math display='block' name='Proof_Theorem1'>
+		  <mrow name='Proof_Theorem1' inference='1'><mspace height='15px'/>
+			<mi/class='variable'>&minus;&VeryThinSpace;a</mi><mo>&plus;</mo>
+			<mi/class='variable'>a&#8302;</mi><mo/type='operator'>&plus;</mo>
+			<mi/class='variable'>b&#8302;</mi><mo/type='operator'>&equals;</mo>
+			<mi/class='variable'>&minus;&VeryThinSpace;a</mi><mo>&plus;</mo>
+			<mn/type='natural'>0&#8302;</mn><mo/type='operator'>&equals;</mo>
+			<mi class='variable'>&minus;&VeryThinSpace;a</mi><mi>&period;</mi>
+		  </mrow>
+		</math>
+	  </statement>
+	  <p class='proof_Theorem1_subP'>
+		<math name='pf_theorem1'>
+		  <mrow/type='preposition/conjunction'>
+			<mtext/type='adpositional_phrase'>Since&nbsp;</mtext>
+			<mi/class='variable'>&minus;&VeryThinSpace;a&#8302;</mi>
+			<mo/operator>&plus;</mo><mi/class='variable'>a&#8302;</mi>
+			<mo/operator>&plus;</mo><mi/class='variable'>b&#8302;</mi>
+			<mo/operator>&equals;</mo><mn>0&#8302;</mn><mo>&plus;</mo>
+			<mi/class='variable'>b&#8302;</mi><mo/opertr>&equals;</mo>
+			<mi/integer class='variable'>b&#8302;</mi><!--adverbial-->
+			<mtext/adverb>&nbsp;arithmetically follows,&nbsp;</mtext>
+			</mrow><mrow/type='hypothesis_clause' name='hypthesis1'>
+			<mtext/type='adverbialPhrase'>we find that&nbsp;</mtext>
+			<mi/class='variable'>b&#8302;</mi><mo/opertr>&equals;</mo>
+			<mi/integer class='variable'>&minus;&VeryThinSpace;a</mi>
+			<mtext>&period;&nbsp;Similarly, we find that&nbsp;</mtext>
+			<mi/class='variable'>a&#8302;</mi><mo/opertr>&equals;</mo>
+			<mi/integer class='variable'>&minus;&VeryThinSpace;b</mi>
+			</mrow><mrow/type='secondary_hypothesis'><br/apl='wbkit'>
+			<mtext/linebreak='newline'>and moreover still</mtext>
+			<mtext/type='clause' verbphrase>we see that&nbsp;</mtext>
+			<mi/class='variable'>&minus;&VeryThinSpace;b&#8302;</mi>
+			<mo>&equals;</mo>&nbsp;<mo>&minus;&VeryThinSpace;</mo><mo>&#40;</mo>
+			<mi/class='variable'>&minus;&VeryThinSpace;a&#8302;</mi>
+			<mo/type='operator'>&#41;</mo>&nbsp;<mo>&equals;</mo>
+			<mi/class='variable'>a&VeryThinSpace;&period;&#8302;</mi>
+			<mtext class="QED_FFX" type='punctuation'>&#9671;</mtext>
+			<!-- <math/name='QED-FFX'><!-- subtag allows transrom
+			<!-- <mi/type='punctuation' class='QED-FFX'>&#9642;</mi> -->
+			<!-- <br/apl='wbkit'> controls QED rendering as well -->
+		  </mrow>
+		</math>
+	  </p>
+	</p>
+	<p name="special_case_TH1">
+	  <div class="SC_TH1">
+		<clause/type='preposition'><i>As a special case of</i>&ThinSpace;
+		  <span class='arial'>Theorem 1</span> &mdash; for any integer 
+		  <b/class='variable'>a</b>&comma; <verbphrase>we have</verbphrase>
+		</clause><!-- clause -->
+	  </div><!-- Theorem2 -->
+	  <table class='theorem'>
+	    <tr name='statement'><!--Statement-->
+		  <td class='TDCE-1' width='24%'>Theorem 2.</td>
+		  <td class='TDCE_TH2'>
+		    <math/name='theorem2'>
+			  <mrow/name='theorem2'>
+				<mtext>Regarding dual negative  multiplicatives,&nbsp;</mtext>
+				<mi/class='variable'>a&#8302;</mi><mo/type='opr'>&equals;</mo>
+				<mi>&minus;&VeryThinSpace;</mi><mo/type='operator'>&#40;</mo>
+				<mi/integer class='variable'>&minus;&VeryThinSpace;a</mi>
+				<mo>&#41;</mo><mi/seperater='false' punctuation>&period;</mi>
+			  </mrow>
+			</math>
+		  </td>
+		</tr>
+	  </table>
+	  <p name="Theorem 2.P">
+		<span class="proof">Proof</span>&period;
+		<math/class='proof_theorem2'>
+		  <mrow/type='subjective_clause'>
+			<mtext>This follows from the fact that&nbsp;</mtext>
+			<mrow/type='additive_inverse' class='axiom'><!--additive_invers-->
+			<mi/class='variable'>a&#8302;</mi><mo/type='operator'>&plus;</mo>
+			<mo>&#40;</mo><mi/class='variable'>&minus;&VeryThinSpace;a</mi>
+			<mo>&#41;</mo><mo>&equals;</mo><mn/type='N'>0&#8302;</mo></mrow>
+			<mtext/type='cnjctPh'>&nbsp;and our ability to apply&nbsp;</mtext> 
+			<mtext><span class="arial">Theorem 1</span> with&nbsp;</mtext>
+			</mrow><mrow/type='eq_phrase'><mi/class='variable'>b&#8302;</mi>
+			<mo>&equals;</mo><mi/class='variable'>&minus;&VeryThinSpace;a</mi>
+			<span><mtext>&period;&nbsp;Notice that this formula is true whether
+			<mi/class='variable'>a</mi> is positive, negative, or 0.</mtext>
+			<mtext>If <mi class='variable'>a</mi> is positive, then</mtext>
+			<mi/class='variable'>&minus;&VeryThinSpace;a</mi><mtext/verbPh> 
+			is negative. If</mtext> <mi/class='variable'>a</mi> <mtext/verbPh>
+			is negative, then</mtext> <mi/class='variable'>&minus;&VeryThinSpace;a</mi> 
+			<mtext/verbPh>is positive&period;</mtext></span></mrow><!--irreg_syntax-->
+		  </mrow>
+		</math>
+	  </p>
+	</p>
+	<p class="indent">
+	  <sentence>From our rules of operation we can now derive
+	  the distributive preperty of <em>minus</em>, i.e.</sentence>
+	  <table class="corollary">
+		<tr name="corollary">
+		  <td class="TDCE-1">
+		  <div class='indent_corolary'>Corollary</div>
+		  </td><td class="TDCE_COR">
+			<math name='Corollary'>
+			  <mrow/name='quantifier_phrase'>
+				<mo/type='quantifier'>&forall;</mo>
+				<mi/class='variable'>a&comma;</mi>
+				<mi/class='variable'>b&#8302;</mi>
+				<mo/type='quantifier'>&in;&VeryThinSpace;</mo>
+				<mi/category='set'>&integers;&MediumSpace;</mi>
+				</mrow><mrow/binomial_quantity><mi/type='operator'>&minus;</mi>
+				<mo/type='operator'>&#40;</mo><mi/class='variable'>a&#8302;</mi>
+				<mo/type='operator'>&plus;</mo><mi/class='variable'>b&#8302;</mi>
+				<mo/operator>&#41;</mo></mrow><mrow><mo/type='operator'>&equals;</mo>
+				<mi/class='variable'>&minus;&VeryThinSpace;a</mi><mo/oprtr>&plus;</mo>
+				<mo/opertr>&#40;</mo><mi/class='variable'>&minus;&VeryThinSpace;b</mi>
+				<mo/opertr>&#41;</mo><mpadded lspace='5px' width='35px' height='1px'>
+				<mtext/operator name='biconditional'>&#x27F7;</mtext></mpadded></mrow>
+				<mrow><mi>&minus;</mi><mo>&#40;</mo><mi/class='variable'>a&#8302;</mi>
+				<mo/opertr>&plus;</mo><mi/class='variable'>b&#8302;</mi><mo>&#41;</mo>
+				<mo/opertr>&equals;</mo><mi/class='variable'>&minus;&VeryThinSpace;a</mi>
+				<mo>&minus;&#8302;</mo><mi/class='variable'>b&VeryThinSpace;&period;</mi>
+				</mrow>
+			  </mrow>
+			</math>
+		  </td>
+		<tr>
+	  </table><!--Pf. Corollary-->
+	  <p class="indent_pf" name='proof_corollary'>
+		<span/class="proof">Proof</span>&period;
+		<math/name='proof_corollary' overflow='linebreak'>
+		  <mrow/name='proof_corollary'>
+			<mtext/type='conjunc_P'>Recall that if&nbsp;</mtext>
+			<mi/class='variable' type='nounPhras'>x&#8302;</mi>
+			<mtext/type='conjunctive_P'>&nbsp;and&nbsp;</mtext>
+			<mi/class='variable' type='nounPhras'>y&#8302;</mi>
+			<mtext/verbP>&nbsp;are integers, then&nbsp;</mtext>
+			<mi/class='variable'>x&#8302;</mi><mo>&equals;</mo>
+			<mi/class='variable'>&minus;&VeryThinSpace;y</mi>
+			<mtext/type='conjunctive'>&nbsp;and&nbsp;</mtext>
+			<mi/class='variable'>y&#8302;</mi><mo>&equals;</mo>
+			<mi/class='variable'>&minus;&VeryThinSpace;x</mi>
+			<mtext/type='VerbPhrase'>&nbsp;indicate that&nbsp;</mtext>
+			<mi/class='variable'>x&#8302;</mi><mo/type='operator'>&plus;</mo>
+			<mi/class='variable'>y&#8302;</mi><mo/type='operator'>&equals;</mo>
+			<mn>0&#8302;&comma;&nbsp;</mn><mtext/type='preposition'>which is to</mtext>
+			</math><math/name='symbolicN'><mspace linebreak='newline' height='15px'/>
+			<mrow/name='syN'><mtext/type='adposition'>say&nbsp;</mtext><mo>&#40;</mo>
+			<mi/class='variable'>x&#8302;</mi><mo/equati type='operator'>&equals;</mo>
+			<mi/class='variable'>&minus;&VeryThinSpace;y&VeryThinSpace;&comma;</mi>
+			<mspace width='5px'/><mi/class='variable'>y&#8302;</mi><mo>&equals;</mo>
+			<mi/class='variable'>x&#8302;</mi><mo/quantif type='operator'>&#41;</mo>
+			<mpadded lspace='5px' width='32px' height='0px'><mi/operator>&#10230;</mi>
+			</mpadded><mo>&#91;</mo><mi/class='variable'>x&#8302;</mi><mo>&plus;</mo>
+			<mi/class='variable'>y&#8302;</mi><mo/equati type='operator'>&equals;</mo>
+			<mi/class='variable'>x&#8302;</mi><mo/type='opr'>&plus;</mo><mo>&#40;</mo>
+			<mi/class='variable'>&minus;&VeryThinSpace;x</mi><mo/type='opr'>&#41;</mo>
+			<mo/type='operator'>&equals;</mo><mn>0&#8302;</mn><mi>&#93;&period;</mi>
+			<mtext/type='clause'>To prove our assertion, we demonstrate that</mtext>
+		  </mrow>
+		</math>
+		<!-- Does not align in FireFox/Gecko -->
+		<div align="center" class='underbracecontainer'>
+		  <math/name='binomial'>
+			<mtable/type='binomial'>
+			  <mtr/name='binomial_iden'>
+				<mtd class='pdcollapse'>
+				<mfenced separators='+'>
+				<mi/class='variable'>a&#8302;</mi>
+				<mi/class='variable'>b&#8302;</mi>
+				</mfenced></mtd><mtd class='pdcollapse'>
+				<mi>&VeryThinSpace;&plus;</mi></mtd><mtd class='pdcollapse'>
+				<mfenced/separators='' name='binomial' secondterm_x:(a + b)>
+				<mi/class='variable'>&minus;&VeryThinSpace;a&#8302;</mi>
+				<mi/type='operator' style='padding:3px' align>&minus;</mi>
+				<mi/class='variable'>b&#8302;</mi></mfenced></mtd><columns4,5/>
+				<mtd class='pdcollapse'><mo/type='operator'>&equals;</mo></mtd>
+				<mtd class='pdcollapse'><mn/type='natural_number'>0&#8302;</mn>
+				<mi/seperator='true' syntax='punctuation'>&comma;</mi></mtd>
+				</mtr><mtr/name='underbraces'><mtd/class='pdcollapse'><mrow>
+				<mo/class='under_brace' name='left-curly-bracket'>&lcub;</mo>
+				<mo style='padding-bottom:19px' stret-control>&#8302;</mo></mrow></mtd>
+				<mtd/name='C2R2'></mtd><mtd><mrow><mo/class='under_brace_y'>&lcub;</mo>
+				<mo style='padding-bottom:23px'>&#8302;</mo></mtd><mtd></mtd><mtd></mtd>
+				</mtr><mtr/name='underbrace_labels'><mtd/class='underbrace_label'>
+				<mi/class='variable'>x&#8302;</mi></mtd><mtd type='phantom'></mtd>
+				<mtd/class='underbrace_label'><mi/class='variable'>y&#8302;</mi>
+				</mtd><mtd/type='phantom_one'></mtd><mtd/type='phantom_two'></mtd>
+			  </mtr>
+			</mtable>
+		  </math>
+		</div>
+		<clause>which may be determined as follows:</clause>
+		<!-- vertical annotation-partition -->
+		<svg height="50" width="300" class='vert_bar'>
+		  <line x1="1.5" y1="0.5" x2="1.5" y2="40.5" 
+		  style="stroke:gray;stroke-width:1px"/>
+		  <switch transform="translate(7,3)">
+			<foreignObject width="200" height="250">
+			  <div/class='associativity'>by associativity</div>
+			  <div/class='commutativity'>by commutativity</div>
+			</foreignObject>
+		  </switch>
+		</svg>
+		<math display='block' style='transform:translate(-70px,0)'>
+		  <mtable/name='binomial'>
+			<mtr groupalign='{right}'>
+			  <mtd/style='padding:5px 0 2px 0; margin:0'>
+				<mrow/r1='by_associativity'>
+				  <mo>&#40;</mo><mi/class='variable'>a&#8302;</mi><mo>&plus;</mo>
+				  <mi/class='variable'>b&#8302;</mi><mo>&#41;</mo><mo>&plus;</mo>
+				  <mo>&#40;</mo><mi/class='variable'>&minus;&VeryThinSpace;a&#8302;</mi>
+				  <mi/type='operator' style='padding:3px;' alignment_css>&minus;</mi>
+				  <mi/class='variable'>b&#8302;</mi><mo/type='operator'>&#41;</mo>
+				  <maligngroup/><mo/type='operator'><malignmark/>&equals;</mo>
+				  <maligngroup/><mi/class='variable'><malignmark/>a&#8302;</mi>
+				  <maligngroup/><mo/type='operator'><malignmark/>&plus;</mo>
+				  <maligngroup/><mi/class='variable'><malignmark/>b&#8302;</mi>
+				  <maligngroup/><mi/style='padding:3;'><malignmark/>&minus;</mi>
+				  <maligngroup/><mi/class='variable'><malignmark/>a&#8302;</mi>
+				  <maligngroup/><mi/style='padding:3;'><malignmark/>&minus;</mi>
+				  <maligngroup/><mi/class='variable'><malignmark/>b&#8302;</mi>
+				</mrow>
+			  </mtd>
+			</mtr>
+			<mtr groupalign='{right}'>
+			  <mtd style='padding:0; margin:0'>
+				<mrow/r2='by_commutativity'>
+				  <mspace width="103px"/>
+		          <maligngroup/><mo/type='operator'><malignmark/>&equals;</mo>
+		          <maligngroup/><mi/class='variable'><malignmark/>a&#8302;</mi>
+		          <maligngroup/><mi/style='padding:3;'><malignmark/>&minus;</mi>
+		          <maligngroup/><mi/class='variable'><malignmark/>a&#8302;</mi>
+		          <maligngroup/><mi/style='padding:3;'><malignmark/>&plus;</mi>
+		          <maligngroup/><mi/class='variable'><malignmark/>b&#8302;</mi>
+		          <maligngroup/><mi/style='padding:3;'><malignmark/>&minus;</mi>
+		          <maligngroup/><mi/class='variable'><malignmark/>b&#8302;</mi>
+				</mrow>
+			  </mtd>
+			</mtr>
+			<mtr groupalign='{right}'>
+			  <mtd style='padding:5px; margin:0'>
+				<mrow/r3><mspace width="60px"/>
+		          <maligngroup/><mo/type='operator'><malignmark/>&equals;</mo>
+		          <maligngroup/><mn/class='natural'><malignmark/>0&#8302;</mn>
+		          <maligngroup/><mo/type='operator'><malignmark/>&plus;</mo>
+		          <maligngroup/><mn/class='natural'><malignmark/>0&#8302;</mn>
+		        </mrow>
+		      <mtd>
+		    </mtr>
+		    <mtr groupalign='{right}'>
+			  <mtd style='padding:3px; margin:0'>
+				<mrow/r3><mspace width="32px"/>
+		          <maligngroup/><mo/type='operator'><malignmark/>&equals;</mo>
+		          <maligngroup/><mn/class='natural'><malignmark/>0&#8302;</mn>
+		        </mrow>
+		      </mtd>
+		    </mtr>
+		    <mtr groupalign='{right}'>
+			  <mtd style='padding:5px 5px.3px 0 0; margin:0'>
+				<mrow/r3><mspace width="32px"/>
+		          <maligngroup/><mi><malignmark/>&#9723;</mi>
+		        </mrow>
+		      </mtd>
+		    </mtr>
+		  </mtable>
+		</math>
+	  	<sentence>This proves our corollary.</sentence>
+	  </p>
+	  <p name='Axiom5'>
+		<section style='padding-bottom:10px;'>
+		  <table class="theorem">
+			<tr name="Axiom 1.">
+			  <td class="TDCE-1">Axiom 5.</td>
+			  <td class="TDCE-Ax1">
+				<math/name='Axiom5'>
+				  <mrow/name='Axiom5'>
+				    <mspace height='13px'/>
+					<mtext>If&nbsp;</mtext><mi/class='variable'>a&#8302;</mi>
+					<mtext>&nbsp;and&nbsp;</mtext><mi/class='variable'>b&#8302;</mi> 
+					<mtext/type='VP'>&nbsp;are positive integers, then&nbsp;</mtext> 
+					<mi/class='variable'>a&#8302;</mi><mo/type='operator'>&plus;</mo>
+					<mi/class='variable'>b&#8302;&nbsp;</mi><mtext>is also a&nbsp;</mtext>
+					<mtext>positive integer</mtext><mi/seperator='false'>&period;</mi>
+				  </mrow>
+				</math>
+			  </td>
+			</tr>
+		  </table>
+		</section>
+	  	<normative>We assume this rule regarding positive integers, 
+	  	and it applies to positive real numbers as well.</normative>
+	  </p>
+	  <p name='theorem_three'>
+	  <section name='theorem3'>
+		<table class="theorem">
+		  <tr name="Theorem 1.">
+			<td class="TDCE-1">Theorem 3.</td>
+			<td class="TDCE-2">
+			  <math/name='theorem_three'>
+			    <mrow/type='theorem_three'>
+			      <mspace height='13px' mspace/>
+			      <mtext/type='conditional'>If&nbsp;</mtext> 
+			      <mi/class='variable' type='integer'>a&#8302;</mi>
+			      <mtext/type='conjunctivePhrase'>&nbsp;and</mtext>
+			      <mi/class='variable' type='integer'>&nbsp;b</mi> 
+				  <mtext>&nbsp;are negative integers, then&nbsp;</mtext>
+				  <mi/class='variable'>a&#8302;</mi><mo>&plus;</mo> 
+				  <mi/class='variable' type='integer'>b&#8302;</mi>
+				  <mtext/type='verbP'>&nbsp;is negative.</mtext>
+				</mrow>
+			  </math>
+			</td>
+		  </tr>
+		</table>
+	  </section>
+	  <p name='proof_theorem-3'>
+		<span class='proof'>Proof</span>&period;&ThinSpace;
+		<math/name-'proof_theorem3'>
+		  <mrow/name='proof_theorem3'>
+		    <mtext/type='verb_phrase'>Suppose we let&nbsp;</mtext>
+		    <mi/class='variable'>a&#8302;</mi><mo>&equals;</mo>
+		    <mi/class='variable'>&minus;&VeryThinSpace;m</mi>
+		    <mtext/type='conjunctive_phrase'>&nbsp;and&nbsp;</mtext>
+		    <mi/class='variable'>b&#8302;</mi><mo>&equals;</mo>
+		    <mi/class='variable'>&minus;&VeryThinSpace;n</mi>
+		    <mtext/type='adverbial'>&comma; where&nbsp;</mtext>
+		    <mi/class='variable'/def='m_great_0'>m&#8302;</mi>
+		    <mtext/type='conjunct_phr'>&nbsp;and&nbsp;</mtext>
+		    <mi/class='variable'='m_great_0'>n&#8302;</mi>
+		    <mtext/type='verbP'>&nbsp;are positive. Then</mtext>
+		    </mrow><br/apl='wbkit'><math display='block'>
+		    <mpadded height='20px' voffset='2.5px'><mrow/id='eq'>
+		    <mi/class='variable'>a&#8302;</mi><mo>&plus;</mo>
+		    <mi/class='variable'>b&#8302;</mi><mo>&equals;</mo>
+		    <mi/class='variable'>&minus;&VeryThinSpace;m</mi>
+		    <mo>&minus;</mo><mi/class='variable'>n&#8302;</mi>
+		    <mo>&equals;</mo><mi>&minus;</mi><mo>&#40;</mo>
+		    <mi/class='variable'>m&#8302;</mi><mo>&plus;</mo>
+		    <mi/class='variable'>n&#8302;</mi><mo>&#41;</mo>
+		    <mtext/type='synt'>&comma;</mtext></mrow></mpadded>
+		    </math><math/name='verb_phras'><mrow/name='conclusn'>
+		    <mtext/type='VerbP'>which shows that&nbsp;</mtext>
+		    <mi/class='variable'>a&#8302;</mi><mo>&plus;</mo>
+		    <mi/class='variable'>b&#8302;</mi><!--VerbPhrase-->
+		    <mtext>&nbsp;is negative, because&nbsp;</mtext>
+		    <mi/class='variable'>m&#8302;</mi><mo>&plus;</mo>
+		    <mi/class='variable'>n&#8302;</mi><!--VerbPhrase-->
+		    <mtext/type='VerbPhrase'>&nbsp;is positive.</mtext>
+			<span/type='punctuation' class="QED">&#9671;</span>
+		  </mrow>
+		</math>
+	  </p>
+	</p>
+	<h5>&sect;EXERCISES</h5>
+	<p name='Exercises' class='indent_ex'>
+	  <text>Prove the following identities. Justify each step, 
+	  using commutativity, associativity, and (where applicable) 
+	  additive identity, and additive inverse.</text>
+	  <ol name='identities' style='margin-top:-10px;'>
+		<li name='1'>
+		  <math/id='identity_1'>
+		    <mrow/id='identity_1'>
+			  <mo>&#40;</mo><mi/class='variable'>a&#8302;</mi><mo>&plus;</mo>
+			  <mi/class='variable'>b&#8302;</mi><mo>&#41;</mo><mo>&plus;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>c&#8302;</mi><mo>&plus;</mo>
+			  <mi/class='variable'>d&#8302;</mi><mo>&#41;</mo><mo>&equals;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>a&#8302;</mi><mo>&plus;</mo>
+			  <mi/class='variable'>d&#8302;</mi><mo>&#41;</mo><mo>&plus;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>b&#8302;</mi><mo>&plus;</mo>
+			  <mi/class='variable'>c&#8302;</mi><mo/type='quantifier'>&#41;</mo>
+			  <mi/seperator='true' type='punctuation/full-stop'>&period;</mi>
+		    </mrow>
+		  </math>
+		</li>
+		<li name='2'>
+  	      <math/id='identity_2'>
+		    <mrow/id='identity_2'>
+			  <mo>&#40;</mo><mi/class='variable'>a&#8302;</mi><mo>&plus;</mo>
+			  <mi/class='variable'>b&#8302;</mi><mo>&#41;</mo><mo>&plus;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>c&#8302;</mi><mo>&plus;</mo>
+			  <mi/class='variable'>d&#8302;</mi><mo>&#41;</mo><mo>&equals;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>a&#8302;</mi><mo>&plus;</mo>
+			  <mi/class='variable'>c&#8302;</mi><mo>&#41;</mo><mo>&plus;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>b&#8302;</mi><mo>&plus;</mo>
+			  <mi/class='variable'>d&#8302;</mi><mo>&#41;</mo><mtext>.</mtext>
+		    </mrow>
+		  </math>
+		</li>
+		<li name='3'>
+		  <math/id='identity_3'>
+		    <mrow/id='identity_3'>
+			  <mo>&#40;</mo><mi/class='variable'>a&#8302;</mi><mo>&minus;</mo>
+			  <mi/class='variable'>b&#8302;</mi><mo>&#41;</mo><mo>&plus;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>c&#8302;</mi><mo>&minus;</mo>
+			  <mi/class='variable'>d&#8302;</mi><mo>&#41;</mo><mo>&equals;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>a&#8302;</mi><mo>&plus;</mo>
+			  <mi/class='variable'>c&#8302;</mi><mo>&#41;</mo><mo>&plus;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>&minus;&VeryThinSpace;b</mi>
+			  <mo>&minus;</mo><mi/class='variable'>d&#8302;</mi><mo>&#41;</mo>
+			  <mtext/type='punctuation' syntax='seperator'>&period;</mtext>
+		    </mrow>
+		  </math>
+		</li>
+		<li name='4'>
+		  <math/id='identity_4'>
+		    <mrow/id='identity_4'>
+			  <mo>&#40;</mo><mi/class='variable'>a&#8302;</mi><mo>&minus;</mo>
+			  <mi/class='variable'>b&#8302;</mi><mo>&#41;</mo><mo>&plus;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>c&#8302;</mi><mo>&minus;</mo>
+			  <mi/class='variable'>d&#8302;</mi><mo>&#41;</mo><mo>&equals;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>a&#8302;</mi><mo>&plus;</mo>
+			  <mi/class='variable'>c&#8302;</mi><mo>&#41;</mo><mo>&minus;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>b&#8302;</mi><mo>&plus;</mo>
+			  <mi/class='variable'>d&#8302;</mi><mo/type='operator'>&#41;</mo>
+			  <mtext/type='punctuation' syntax='seperator'>&period;</mtext>
+		    </mrow>
+		  </math>
+		</li>
+		<li name='5'>
+		  <math/id='identity_5'>
+		    <mrow/id='identity_5'>
+			  <mo>&#40;</mo><mi/class='variable'>a&#8302;</mi><mo>&minus;</mo>
+			  <mi/class='variable'>b&#8302;</mi><mo>&#41;</mo><mo>&plus;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>c&#8302;</mi><mo>&minus;</mo>
+			  <mi/class='variable'>d&#8302;</mi><mo>&#41;</mo><mo>&equals;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>a&#8302;</mi><mo>&minus;</mo>
+			  <mi/class='variable'>d&#8302;</mi><mo>&#41;</mo><mo>&plus;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>c&#8302;</mi><mo>&minus;</mo>
+			  <mi/class='variable'>b&#8302;</mi><mo/type='operator'>&#41;</mo>
+			  <mtext/type='punctuation' syntax='seperator'>&period;</mtext>
+		    </mrow>
+		  </math>
+		</li>
+		<li name='6'>
+		  <math/id='identity_6'>
+		    <mrow/id='identity_6'>
+			  <mo>&#40;</mo><mi/class='variable'>a&#8302;</mi><mo>&minus;</mo>
+			  <mi/class='variable'>b&#8302;</mi><mo>&#41;</mo><mo>&plus;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>c&#8302;</mi><mo>&minus;</mo>
+			  <mi/class='variable'>d&#8302;</mi><mo>&#41;</mo><mo>&equals;</mo>
+			  <mi>&minus;&VeryThinSpace;</mi><mo/type='operator'>&#40;</mo>
+			  <mi/class='variable'>b&#8302;</mi><mo/type='operator'>&plus;</mo>
+			  <mi/class='variable'>d&#8302;</mi><mo>&#41;</mo><mo>&plus;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>a&#8302;</mi><mo>&plus;</mo>
+			  <mi/class='variable'>c&#8302;</mi><mo/type='operator'>&#41;</mo>
+			  <mtext/type='punctuation' syntax='seperator'>&period;</mtext>
+		    </mrow>
+		  </math>
+		</li>
+		<li name='7'>
+  	  	  <math/id='identity_7'>
+		    <mrow/id='identity_7'>
+			  <mo>&#40;</mo><mi/class='variable'>a&#8302;</mi><mo>&minus;</mo>
+			  <mi/class='variable'>b&#8302;</mi><mo>&#41;</mo><mo>&plus;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>c&#8302;</mi><mo>&minus;</mo>
+			  <mi/class='variable'>d&#8302;</mi><mo>&#41;</mo><mo>&equals;</mo>
+			  <mi>&minus;&VeryThinSpace;</mi><mo/type='operator'>&#40;</mo>
+			  <mi/class='variable'>b&#8302;</mi><mo/type='operator'>&plus;</mo>
+			  <mi/class='variable'>d&#8302;</mi><mo>&#41;</mo><mo>&minus;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>&minus;&VeryThinSpace;a&#8302;</mi>
+			  <mo>&minus;</mo><mi/class='variable'>c&#8302;</mi><mo>&#41;</mo>
+			  <mtext/type='punctuation' syntax='seperator'>&period;</mtext>
+		    </mrow>
+		  </math>
+		</li>
+		<li name='8'>
+		  <math/id='identity_8'>
+		    <mrow/id='identity_8'>
+		      <mo>&#40;</mo><mo>&#40;</mo><mi/class='variable'>x&#8302;</mi>
+		      <mo>&plus;</mo><mi/class='variable'>y&#8302;</mi><mo>&#41;</mo>
+		      <mo>&plus;</mo><mi/class='variable'>z&#8302;</mi><mo>&#41;</mo>
+		      <mo>&plus;</mo><mi/class='variable'>w&#8302;</mi><mo>&equals;</mo>
+		      <mo>&#40;</mo><mi/class='variable'>x&#8302;</mi><mo>&plus;</mo>
+		      <mi/class='variable'>z&#8302;</mi><mo>&#41;</mo><mo>&plus;</mo>
+		      <mo>&#40;</mo><mi/class='variable'>y&#8302;</mi><mo>&plus;</mo>
+		      <mi/class='variable'>w&#8302;</mi><mo>&#41;</mo><mtext>.</mtext>
+		    </mrow>
+		  </math>
+		</li>
+		<li name='9'>
+		  <math/id='identity_9'>
+		    <mrow/id='identity_9'>
+		      <mo>&#40;</mo><mi/class='variable'>x&#8302;</mi><mo>&minus;</mo>
+		      <mi/class='variable'>y&#8302;</mi><mo>&#41;</mo><mo>&minus;</mo>
+		      <mo>&#40;</mo><mi/class='variable'>z&#8302;</mi><mo>&minus;</mo>
+		      <mi/class='variable'>w&#8302;</mi><mo>&#41;</mo><mo>&equals;</mo>
+		      <mo>&#40;</mo><mi/class='variable'>x&#8302;</mi><mo>&plus;</mo>
+		      <mi/class='variable'>w&#8302;</mi><mo>&#41;</mo><mo>&minus;</mo>
+		      <mi/class='variable'>y&#8302;</mi><mo/type='operator'>&minus;</mo>
+		      <mi/class='variable'>z&#8302;</mi/type='punctuation'>&period;</mtext>
+		    </mrow>
+		  </math>
+		</li>
+		<li name='10'>
+		  <math/id='identity_10'>
+		    <mrow/id='identity_10'>
+		      <mo>&#40;</mo><mi/class='variable'>x&#8302;</mi><mo>&minus;</mo>
+		      <mi/class='variable'>y&#8302;</mi><mo>&#41;</mo><mo>&minus;</mo>
+		      <mo>&#40;</mo><mi/class='variable'>z&#8302;</mi><mo>&minus;</mo>
+		      <mi/class='variable'>w&#8302;</mi><mo>&#41;</mo><mo>&equals;</mo>
+		      <mo>&#40;</mo><mi/class='variable'>x&#8302;</mi><mo>&minus;</mo>
+		      <mi/class='variable'>z&#8302;</mi><mo>&#41;</mo><mo>&plus;</mo>
+		      <mo>&#40;</mo><mi/class='variable'>w&#8302;</mi><mo>&minus;</mo>
+		      <mi/class='variable'>y&#8302;</mi><mo>&#41;</mo><mtext>.</mtext>
+		    </mrow>
+		  </math>
+		</li>
+		<li name='11'>
+		  <math/id='identity_11'>
+			<mrow/id='identity_11'>
+			  <mtext/type='verb_phrase'>Show that&nbsp;</mtext>
+			  <mi>&minus;&VeryThinSpace;</mi><mo/type='operator'>&#40;</mo>
+			  <mi/class='variable'>a&#8302;</mi><mo/type='operator'>&plus;</mo>
+			  <mi/class='variable'>b&#8302;</mi><mo/type='operator'>&plus;</mo>
+			  <mi/class='variable'>c&#8302;</mi><mo>&#41;</mo><mo>&equals;</mo>
+			  <mi/class='variable'>&minus;&VeryThinSpace;a&#8302;</mi><mo>&plus;</mo>
+			  <mo>&#40;</mo><mi/class='variable'>&minus;&VeryThinSpace;b&#8302;</mi>
+			  <mo/type='operator'>&#41;</mo><mo/type='ope'>&plus;</mo><mo>&#40;</mo>
+			  <mi/class='variable'>&minus;&VeryThinSpace;c&#8302;</mi><mo>&#41;</mo>
+			  <mtext/type='punctuation'>&period;</mtex><!--distributive property-->
+			</mrow>
+		  </math>
+		</li>
+		<li name='12'>
+		  <math/id='identity_12'>
+			<mrow/id='identity_12'>
+			  <mtext/type='verb_phrase'>Show that&nbsp;</mtext>
+			  <mi>&minus;&VeryThinSpace;</mi><mo/type='operator'>&#40;</mo>
+			  <mi/class='variable'>a&#8302;</mi><mo/type='operator'>&minus;</mo>
+			  <mi/class='variable'>b&#8302;</mi><mo/type='operator'>&minus;</mo>
+			  <mi/class='variable'>c&#8302;</mi><mo>&#41;</mo><mo>&equals;</mo>
+			  <mi/class='variable'>&minus;&VeryThinSpace;a&#8302;</mi><mo>&plus;</mo>
+			  <mi/class='variable'>b&#8302;</mi><mo/type='operator'>&plus;</mo>
+			  <mi/class='variable'>c&#8302;</mi><mtext/type='punct'>&period;</mtex>
+			</mrow>
+		  </math>
+		</li>
+		<li name='13'>
+		  <math/id='identity_12'>
+			<mrow/id='identity_12'>
+			  <mtext/type='verb_phrase'>Show that&nbsp;</mtext>
+			  <mi>&minus;</mi><mo>&#40;</mo><mi/class='variable'>a&#8302;</mi>
+			  <mo>&minus;</mo><mi/class='variable'>b&#8302;</mi><mo>&#41;</mo>
+			  <mo>&equals;</mo><mi/class='variable'>b&#8302;</mi><mo>&minus;</mo>
+			  <mi/class='variable'>a&#8302;</mi><mtext/type='punctuation'>.</mtext>
+			</mrow>
+		  </math>
+		</li>
+	  </ol>
+	  <mtext/type='VP'>Solve for</metxt> <mi/class='variable'>x</mi>
+	  <mtext/type='PRP_P'>in the following equations&period;</mtext>
+	  <table name='Exc_14-21' width='55%'>
+		<tr name='row1'>
+		  <td name='column1' class='p14-p21'>
+			<ol name='Exc_evens' style='margin:0'>
+			  <li value='14'>
+				<math/id='14'>
+				  <mrow/type='14'>
+				    <mn>&minus;&VeryThinSpace;2&#8302;</mn>
+				    <mo/type='operator'>&plus;</mo> 
+					<mi/class='variable'>x&#8302;</mi>
+					<mo/type='operator'>&equals;</mo> 
+					<mn>4&#8302;</mn><mtext>&period;</mtext>
+				    </mrow></math></li><li value='16'>
+					<math/identifier='16'><mrow/identifier='16'>
+				    <mi/class='variable'>x&#8302;</mi><mo>&minus;</mo>
+				    <mn/type='i'>3</mn><mo/type='operator'>&equals;</mo>
+				    <mn>7&#8302;</mn><mi/seperator='true'>&period;</mi>
+				  	</morw></math></li><li value='18'><math/id='18'>
+				  	<mrow/id='18'><mn>4&#8302;</mn><mo>&minus;</mo> 
+				    <mi/class='variable'>x&#8302;</mi><mo>&equals;</mo> 
+				    <mn>8&#8302;</mn><mi/seperator='true'>&period;</mi>
+				  	</mrow></mat></li><li value='20'><math/id='20'>
+					<mrow/id='20'><mn>&minus;&VeryThinSpace;7&#8302;</mn>
+					<mo>&plus;</mo><mi/class='variable'>x&#8302;</mi>
+					<mo>&equals;</mo><mn>&minus;&VeryThinSpace;10</mn>
+					<mi/seperator='true' type='punctuation'>&period;</mi>
+				  </mrow>
+				</math>
+			  </li>
+			</ol>
+		  </td>
+	      <td name='column2' class='Ex_15-21'>
+	        <ol name='Exc_odds' style='margin:0'>
+	          <li value='15' name='column2'>
+			    <math/id='15' name='column2'>
+				  <mrow/id='15' name='column2'>
+					<mn>2&#8302;</mn><mo/type='operator'>&minus;</mo>
+					<mi/class='variable'>x&#8302;</mi><mo>&equals;</mo>
+					<mn/type='i'>5</mn><mi/seperator='true'>&period;</mi></mrow>
+					</math></li><li value='17'><math/id='17'><mrow/id='17'>
+					<mi/class='variable'>&minus;&VeryThinSpace;x</mi>  
+					<mo>&plus;</mo><mn>4&#8302;</mn><mo>&equals;</mo> 
+					<mn/type='int'>&minus;&VeryThinSpace;1&#8302;</mn>
+					<mi/seperator='true' type='punctuation'>&period;</mi>
+					</mrow></math></li><li value='19'><math/id='19'>
+					<mrow/id='19'><mn>&minus;&VeryThinSpace;5</mn>
+					<mo>&minus;</mo><mi/class='variable'>x&#8302;</mi>
+					<mo>&equals;</mo><mn>&minus;&VeryThinSpace;2&#8302;</mn>
+					<mi/seperator='true'>&period;</mi></mrow></math></li>
+					<li value='21'><math/id='21'><mrow/id='21'>
+					<mn>&minus;&VeryThinSpace;3</mn><mo>&plus;</mo> 
+					<mi/class='variable'>x&#8302;</mi><mo>&equals;</mo>
+					<mn>4&#8302;</mn><mi/seperator='true'>&period;</mi>
+				  </mrow>
+			  	</math>
+			  </li>
+	      	</ol>
+	      </td>
+	  	</tr>
+	  </table>
+	  <ol name='Exc' style='margin:2px'>
+		<li value='22'>
+		  <math/id='22'>
+			<mrow/id='22'>
+	  	      <mtext>Prove the&nbsp;<i><b>cancellation law</b></i>&nbsp;</mtext>
+	  	      <mtext>for addition &mdash; namely: &ThinSpace;If&nbsp;</mtext>
+			  <mi/class='variable'>a&#8302;</mi><mo/type='operator'>&plus;</mo>
+			  <mi/class='variable'>b&#8302;</mi><mo/type='operator'>&equals;</mo>
+			  <mi/class='variable'>a&#8302;</mi><mo/type='operator'>&plus;</mo>
+			  <mi/class='variable'>c&#8302;</mi><mo/seperator='true'>&comma;</mo>
+			  <mtext/type='conditional_phrase'>then&nbsp;</mtext>
+			  <mi/class='variable'>b&#8302;</mi><mo/type='operator'>&equals;</mo>
+			  <mi/class='variable'>c&#8302;</mi><mi/seperator='true'>&period;</mi>
+		  	</mrow>
+		  </math>
+	  	</li>
+	  	<li name='Exc_23'>
+		  <math/id='23'>
+			<mrow/id='23'>
+	          <mtext/type='verb_phrase'>Prove that if&nbsp;</mtext>
+	          <mi/class='variable'>a&#8302;</mi><mo/type='operator'>&plus;</mo>
+	          <mi/class='variable'>b&#8302;</mi><mo/type='operator'>&equals;</mo>
+	          <mi/class='variable'>a&#8302;</mi><mo/seperator='true'>&comma;</mo>
+	          <mtext/type='conP'>then&nbsp;</mtext><mi/class='variable'>b&#8302;</mi> 
+	          <mo>&equals;</mo><mn>0&#8302;</mn><mi/seperator='true'>&period;</mi>
+	      	</mrow>
+	      </math>
+	  	</li>
+	  </ol>
+	</p>
+	</label>
+  </body>
+</html>

@@ -1,0 +1,252 @@
+.body{
+	@font-face{
+    font-family: "Computer Modern";
+    src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
+  	}
+  	@font-face{
+    font-family: "Computer Modern";
+    src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsx.otf');
+    font-weight: bold;
+  	}
+	@font-face{
+    font-family: "Computer Modern";
+    src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsi.otf');
+    font-style: italic, oblique;
+	}
+	@font-face{
+    font-family: "Computer Modern";
+    src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunbxo.otf');
+    font-weight: bold;
+    font-style: italic, oblique;
+	}
+ 	padding-left:5px; 
+	font-family:Didot;
+    /*-moz-transform: scale(0.94, 0.94); /* Moz-browsers */
+    /*zoom: 0.94; /* Other non-webkit browsers */
+    /*zoom: 94%; /* Webkit browsers */
+	font-size:14px;
+  }
+  .unselectable{
+    cursor: default;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+.strikethrough {
+  position: relative;
+  font-family:'Avenir next';
+}
+  .strikethroughWK {
+	position: relative;
+	font-family:'Avenir next';
+}
+  .strikethrough:before{
+	position: absolute;
+	content: "";
+	left:  -0.3px;
+	top: 47%;
+	right: 0px;
+	border-top: 1px solid;
+	border-color: inherit;
+	-webkit-transform:rotate(-50deg);
+	-moz-transform:rotate(-50deg);
+	-ms-transform:rotate(-50deg);
+	-o-transform:rotate(-50deg);
+	transform:rotate(-50deg);
+  }
+  .strikethroughWK:before{
+	position: absolute;
+	content: "";
+	left:  0px;
+	top: 43%;
+	right: -1px;
+	border-top: 1px solid;
+	border-color: inherit;
+	-webkit-transform:rotate(-50deg);
+	-moz-transform:rotate(-50deg);
+	-ms-transform:rotate(-50deg);
+	-o-transform:rotate(-50deg);
+	transform:rotate(-50deg);
+  }
+  math{font-family:Didot;}
+/*   mi{font-style:italic;} */
+  .variable{font-style:italic;}
+  .nvar{font-style:none;}
+  .definition{
+	font-size:14px;
+	width:100%; 
+	padding-bottom:1.5%;
+	background:linear-gradient(to right,#f8f8f8 70%,white);
+  }
+  .theorem{
+	font-size:14px;
+	width:100%; 
+	background:linear-gradient(to right,#f8f8f8 70%,white);
+  }
+  .corollary{
+	width:100%;
+	font-size:14px; 
+	background:linear-gradient(to right,#f8f8f8 70%,white);
+	margin:2.5px 0px 30px;
+  }
+  .proof_Corollary1{
+  	border-collapse:collapse;
+  	line-height:1px;
+  	margin-top:5px;
+  	font-size:14px;
+  }
+  .TAC{text-align:center;}
+  h1{color:#626263;}
+  h5{margin-bottom:5px;}
+  th{
+	padding:10px;
+	font-family:arial; 
+	font-size:13px; color:#4D4E4F; 
+	text-decoration:underline;
+  }
+  .TDCE-1{
+	font-family:arial;
+	font-size:13px;
+	font-weight:bold;
+  }
+  .TDCE_definition{text-align:center; padding-right:8.5%;}
+  .TDCE_def{font-weight:bold; font-size:12px;}
+  .TDCE-2{text-align:center; padding-right:15%}
+  .TDCE-2FFX{text-align:center; padding-right:20%}
+  .TDCE-Ax1{text-align:center; padding-right:11%;}
+  .TDCE-Ax2{text-align:center; padding-right:9.5%;}
+  .TDCE_Ax2-SFI{text-align:center; padding-right:11.5%;}
+  .TDCE_Ax3{text-align:center; padding-right:9.5%;}
+  .TDCE_Ax4{text-align:center; padding-right:8.8%;}
+  .TDCE_Ax7{text-align:center; padding-right:10%;}
+  .Proof_Theorem1{rendering inert}
+  .proof_Theorem1_subP{margin-top:-3px}
+  .TDCE_TH2{text-align:center; padding-right:23%;}
+  .TDCE_COR{text-align:center; padding:5px 20% 0px 0px;}
+  .QED{vertical-align:-2px;}
+  .QED_FFX{vertical-align:-2px; margin-left:-5px;}
+  .QED-MML{transform:translate(-3px,2px);}
+  .QED-FFX{transform:translate(-2px,1px); color:gray;}
+  .SC_TH1{padding-bottom:.5%;}
+  .arial{
+	font-family:arial;
+	font-size:12px;
+	color:gray;
+  }
+  p.indent{text-indent:30px; margin-top:-10px;}
+  p.indent_pf{text-indent:30px; margin-top:-15px;}
+  p.indent_ex{text-indent:30px; margin-top:1px;}
+  p.indent_nm{text-indent:30px;}
+  .indent_corolary{text-indent:30px;}
+  .proof{
+	font-style:italic; 
+	text-decoration:underline;
+  }
+  .Figure1-1{text-align:center; padding:15px 0px 15px 6.5%;}
+  .Figure1-2{text-align:center; padding:0px 0px 0.5% 6.5%;}
+  .Figure1-3{text-align:center; padding:15px 0px 0px 10.5%;}
+  .Figure1-4{text-align:center; padding:15px 0px 0px 10.5%;}
+  .Figure{
+	color:gray;
+	float:right;
+	font-size:11px;
+	padding-top:7px;
+	font-family:arial;
+  }
+  .Figure-1{
+	color:gray;
+	float:right;
+	font-size:11px;
+	padding-top:1px;
+	font-family:arial;
+  }
+  .Figure-2{
+	color:gray;
+	float:right;
+	font-size:11px;
+	padding-top:3px;
+	font-family:arial;
+  }
+  .bicon{padding:0px 6px 0px 10px;}
+  .underbrace{
+  	color:gray;
+	font-size:2.5em; 
+	transform: rotate(-90deg) translate(5px,-1px); 
+	line-height:0.5px;
+	vertical-align:top;
+	text-align:center;
+	margin:none;
+  }
+  .under_brace{
+	color:gray;
+	transform:rotate(-90deg) translate(-2px,-15px)
+  }
+  .under_brace_y{
+	color:gray;
+	transform:rotate(-90deg) translate(-5px,-19px)
+  }
+  .underbrace_label{
+    color:gray;
+    padding:0px; margin:0px;
+    position:relative;top:-44px;left:1;
+  }
+  .underbrace1{
+  	color:gray;
+	font-size:3.3em; 
+	transform: rotate(-90deg) translate(4px,-4.2px); 
+	line-height:0.5px;
+  }
+  .underbraceT{
+	font-size:14px;
+    border-collapse:collapse; 
+    text-align:center;
+  }
+  .underbracecontainer{margin:-5px 0px -45px 0px;}
+  .x{
+	font-size:14px; 
+	color:gray;
+	font-style:italic
+	}
+
+  .label_x{transform: translate(0,-15px); color:gray;}
+  .label_y{transform: translate(0,-15px); color:gray;}
+  .propertyLBL{
+	color: gray;
+	font-size:12px;
+	padding-left:50px;
+	font-family:arial;
+  }
+  .vert_bar{
+	color:gray;
+  	font-size:12px;
+  	font-family:arial;
+	position:absolute; right:0px; 
+	transform:translate(0px,20px)
+  }
+  .vert_barFFX{
+	position:absolute; right:280px; 
+	transform:translate(0px,4px)
+  }
+  .VAT{font-size:14px; vertical-align:top;}
+  .RMRK_body{
+  padding-left:5px; 
+  font-size:14px; 
+  transform:translate(0px,1px)
+  }
+  .serif{font-family:num;}
+  .Z{margin-left:-3px;}
+  .bord-collapse{border-collapse:collapse;}
+  .brd-spacing{padding:0px; margin:0px;}
+  .vac_brd_spacing{padding:0px; margin:0px;}
+  .mominus{transform:translate(0px,-1px)}
+  .proof_theorem2{overflow-wrap: break-word;
+    inline-size: max-content;
+  }
+.p14-p21{padding:0px; margin:0px; font-size:14px;}
+.Ex_15-21{padding:0px; margin:0px; font-size:14px;}
+.pdcollapse{padding:0px; margin:0}
+.associativity{padding:0px 0px 3px 0px;}
+.commutativity{padding:0px;}
