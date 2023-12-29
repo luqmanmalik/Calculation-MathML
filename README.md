@@ -11,4 +11,4 @@
 ![Static Badge](https://img.shields.io/badge/MathML-%23758FAE?label=W3C)
 
 ---
-### Contents
+### CONTENTS
